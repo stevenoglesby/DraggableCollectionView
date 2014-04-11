@@ -167,6 +167,9 @@ typedef NS_ENUM(NSInteger, _ScrollingDirection) {
     
     // What cell are we closest to?
     for (UICollectionViewLayoutAttributes *layoutAttr in layoutAttrsInRect) {
+        if(layoutAttr.representedElementCategory != UICollectionElementCategoryCell) {
+            continue;
+        }
         CGFloat xd = layoutAttr.center.x - point.x;
         CGFloat yd = layoutAttr.center.y - point.y;
         NSInteger dist = sqrtf(xd*xd + yd*yd);
