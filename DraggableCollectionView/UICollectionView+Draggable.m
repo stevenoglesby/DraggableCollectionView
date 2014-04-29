@@ -50,4 +50,16 @@
     [self getHelper].scrollingSpeed = scrollingSpeed;
 }
 
+- (CFTimeInterval)minimumPressDuration
+{
+    UILongPressGestureRecognizer *gr = (UILongPressGestureRecognizer *)[self getHelper].longPressGestureRecognizer;
+    return gr.minimumPressDuration;
+}
+
+- (void)setMinimumPressDuration:(CFTimeInterval)minimumPressDuration
+{
+    UILongPressGestureRecognizer *gr = (UILongPressGestureRecognizer *)[self getHelper].longPressGestureRecognizer;
+    gr.minimumPressDuration = minimumPressDuration;
+}
+
 @end
