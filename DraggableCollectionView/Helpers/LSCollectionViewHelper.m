@@ -143,7 +143,7 @@ typedef NS_ENUM(NSInteger, _ScrollingDirection) {
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     if ([gestureRecognizer isEqual:_longPressGestureRecognizer]) {
-        if ([touch.view isKindOfClass:[UICollectionReusableView class]] || [touch.view isKindOfClass:[UIButton class]]) {
+        if ([touch.view isKindOfClass:[UIButton class]]) {
             return NO;
         }
     }
